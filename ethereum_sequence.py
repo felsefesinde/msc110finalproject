@@ -1,6 +1,5 @@
 import web3
 import random
-#from dotenv import load_dotenv
 
 def generate_eth_sequence():    
     RPC_URL = "https://eth.meowrpc.com"
