@@ -14,4 +14,5 @@ def generate_eth_sequence():
     for num in random_num:
         sequence += transactions[num].hex()[2:]
 
+
     return sequence

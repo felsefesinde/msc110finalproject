@@ -9,20 +9,26 @@ def hex_to_notes(hex_string):
     result = [notes[int(char, 16)] for char in hex_string]
     return result
 
-def create_durations():
-    sum = 0
+def create_duration_series():
+    sum_series = 0
     durations = []
-    while sum <= 64:
+    while sum_series <= 64:
         rand = random.randint(1, 8)
-        sum += rand
+        sum_series += rand
         durations.append(rand)
     
-    durations[len(durations)-1] -= (sum-64)
+    durations[len(durations)-1] -= (sum_series-64)
     if(durations[len(durations)-1] == 0):
         durations.pop()
 
     return durations
 
-durations = create_durations()
-print(durations)
-print(durations[len(durations)-1])
+def generate_final_music(note_sequence, durations):
+    sum_series = 0
+    duration_list = [2, 4, 8, 16]
+    for i in durations:
+        random_out = random.randint(0, len(duration_list)-1)
+        for j in range(sum_series, sum_series + i):
+            duration = duration_list[random_out]
+            note_sequence[j][1] = duration
+        sum_series += i
