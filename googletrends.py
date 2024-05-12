@@ -19,4 +19,4 @@ regiondf = regiondf[(regiondf != 0).all(1)]
 regiondf.dropna(how='all',axis=0, inplace=True)
 
 #visualise
-regiondf.plot(figsize=(20, 12), y=kw_list, kind ='bar')
+#regiondf.plot(figsize=(20, 12), y=kw_list, kind ='bar')
